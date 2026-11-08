@@ -1,8 +1,8 @@
 import AppLayout from '@/layout/AppLayout.vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',
@@ -10,6 +10,15 @@ const router = createRouter({
             children: [
                 {
                     path: '/',
+                    redirect: '/formClientes'
+                },
+                {
+                    path: '/formClientes',
+                    name: 'formClientes',
+                    component: () => import('@/views/FormClientes.vue')
+                },
+                {
+                    path: '/dashboard',
                     name: 'dashboard',
                     component: () => import('@/views/Dashboard.vue')
                 },

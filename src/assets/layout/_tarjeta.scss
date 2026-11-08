@@ -1,0 +1,259 @@
+/* ==========================================================================
+   ESTILOS DE LA TARJETA DIGITAL (GAFETE DE EMPLEADO / ESTUDIANTE)
+   Separación de estilos conforme a las buenas prácticas de arquitectura Sakai
+   ========================================================================== */
+
+.badge-container {
+    width: 330px;
+    height: 525px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 8px 12px -6px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.18), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Encabezado con ondas decorativas */
+.badge-header {
+    position: relative;
+    width: 100%;
+    height: 155px;
+
+    .badge-waves-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 155px;
+        display: block;
+    }
+}
+
+/* Marca / Institución en el encabezado */
+.badge-brand {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+
+    .brand-logo-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .brand-text {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: #ffffff;
+        min-width: 0;
+
+        .company-name {
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            line-height: 1.15;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            white-space: normal;
+        }
+
+        .company-slogan {
+            font-size: 9.5px;
+            color: #bae6fd;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            margin-top: 2px;
+        }
+    }
+}
+
+/* Contenedor del Avatar Circular */
+.badge-avatar-wrapper {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    .badge-avatar {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 5px solid #ffffff;
+        background-color: #f1f5f9;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+/* Cuerpo de la tarjeta */
+.badge-body {
+    margin-top: 52px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 5;
+
+    .badge-first-name {
+        font-size: 20px;
+        font-weight: 900;
+        color: #071d31;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        line-height: 1.15;
+    }
+
+    .badge-last-name {
+        font-size: 20px;
+        font-weight: 900;
+        color: #071d31;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        line-height: 1.15;
+        margin-top: 2px;
+    }
+
+    .badge-role {
+        display: inline-block;
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #0284c7;
+        background-color: #f0f9ff;
+        border: 1px solid #bae6fd;
+        padding: 2px 10px;
+        border-radius: 9999px;
+        margin-top: 6px;
+        text-transform: capitalize;
+    }
+
+    .badge-id {
+        font-size: 13px;
+        font-weight: 700;
+        color: #071d31;
+        letter-spacing: 0.06em;
+        margin-top: 8px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+}
+
+/* Contenedor del código (Barras o QR) */
+.badge-code-wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 58px;
+    justify-content: center;
+
+    /* Código de Barras dinámico */
+    .badge-barcode-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .badge-barcode-svg {
+            width: 195px;
+            height: 38px;
+            display: block;
+        }
+
+        .badge-barcode-number {
+            font-size: 10.5px;
+            font-family: ui-monospace, monospace;
+            font-weight: 600;
+            color: #1f2937;
+            margin-top: 3px;
+            letter-spacing: 0.08em;
+        }
+    }
+
+    /* Código QR dinámico */
+    .badge-qr-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .badge-qr-svg {
+            width: 60px;
+            height: 60px;
+            display: block;
+        }
+
+        .badge-qr-label {
+            font-size: 9px;
+            font-family: ui-monospace, monospace;
+            font-weight: 600;
+            color: #64748b;
+            margin-top: 2px;
+            letter-spacing: 0.05em;
+        }
+    }
+}
+
+/* Pie de tarjeta con ondas inferiores */
+.badge-footer {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: auto;
+
+    .badge-waves-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        display: block;
+    }
+}
+
+/* Reglas de impresión para el gafete */
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+
+    #digital-badge,
+    #digital-badge * {
+        visibility: visible !important;
+    }
+
+    #digital-badge {
+        position: fixed !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+    }
+}
